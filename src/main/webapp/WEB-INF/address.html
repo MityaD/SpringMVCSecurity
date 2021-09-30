@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<br>
+<a href="/user">User table</a>
+<br><br>
+<table border="1">
+  <tr>
+    <th>city</th>
+    <th>street</th>
+    <th>house</th>
+  </tr>
+  <tr th:each="address, state :${addressById} ">
+    <td th:utext="${addressById.address.city}" >city</td>
+    <td th:utext="${addressById.address.street}" >street</td>
+    <td th:utext="${addressById.address.house}" >house</td>
+  </tr>
+</table>
+</body>
+</html>

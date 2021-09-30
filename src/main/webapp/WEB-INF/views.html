@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/users">
+    <input type="hidden" name="id" th:field="*{user.id}">
+    <dl>
+        <dt>First Name:</dt>
+        <dd><input type="text" th:field="*{user.firstName}" size=40 name="firstName" required></dd>
+    </dl>
+    <dl>
+        <dt>Last Name:</dt>
+        <dd><input type="text" th:field="*{user.lastName}" size=40 name="lastName" required></dd>
+    </dl>
+    <dl>
+        <dt>Age:</dt>
+        <dd><input type="text" th:field="*{user.age}" size=40 name="age" required></dd>
+    </dl>
+    <dl>
+        <dt>City:</dt>
+        <dd><input type="text" th:field="*{user.address.city}" size=40 name="city" required></dd>
+    </dl>
+    <dl>
+        <dt>Street:</dt>
+        <dd><input type="text" th:field="*{user.address.street}" size=40 name="street" required></dd>
+    </dl>
+    <dl>
+        <dt>House:</dt>
+        <dd><input type="text" th:field="*{user.address.house}" size=40 name="house" required></dd>
+    </dl>
+    <button type="submit">Save</button>
+</form>
+</body>
+
+</html>
