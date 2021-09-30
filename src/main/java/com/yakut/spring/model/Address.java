@@ -1,15 +1,14 @@
 package com.yakut.spring.model;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
-@RequiredArgsConstructor
+@Entity
 @Table(name = "user_address")
 public class Address {
 
@@ -28,4 +27,10 @@ public class Address {
 
     @OneToOne(mappedBy = "address")
     private User user;
+
+    public Address(String city, String street, String house) {
+        this.city = city;
+        this.street = street;
+        this.house = house;
+    }
 }
