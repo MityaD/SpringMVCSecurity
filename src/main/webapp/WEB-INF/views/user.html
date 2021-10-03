@@ -1,29 +1,33 @@
 <!DOCTYPE html>
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
 </head>
 <body>
-<br>
-<a href="/add">Add User</a>
-<br><br>
+<footer>
+  <a th:href="@{/logout}">Logout</a>
+  <br><br>
+</footer>
+
 <table border="1">
   <tr>
-    <th>No</th>
     <th>first name</th>
     <th>last name</th>
     <th>age</th>
+    <th>password</th>
+    <th>role</th>
   </tr>
-  <tr th:each="user, state :${allUser} ">
-    <td th:utext="${state.count}" >No</td>
-    <td><a th:utext="${user.firstName}" th:href="@{/address(id=${user.id})}">first name<a/></a>
-    <td th:utext="${user.lastName}" >last name</td>
-    <td th:utext="${user.age}" >age</td>
-    <td><a th:href="@{/updateForm(id=${user.id})}">Update</a></td>
-    <td><a th:href="@{/users/delete(id=${user.id})}">Delete</a></td>
+
+  <tr>
+    <td th:utext="${user.firstName}">first name</td>
+    <td th:utext="${user.lastName}">last name</td>
+    <td th:utext="${user.age}">age</td>
+    <td th:utext="${user.password}">email</td>
+    <td th:utext="${user.roles}">email</td>
   </tr>
+
 </table>
 </body>
 </html>

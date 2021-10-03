@@ -4,6 +4,8 @@ import com.yakut.spring.exception.NoUserTableException;
 import com.yakut.spring.model.User;
 import com.yakut.spring.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,6 +17,11 @@ import java.util.List;
 public class UserServiceImpl implements UserService{
 
     private final UserRepository userRepository;
+
+    @Override
+    public List<User> getUserBy() {
+        return userRepository.getUserBy();
+    }
 
     @Override
     public User save(User user) {
@@ -41,5 +48,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public void deleteAll() {
         userRepository.deleteAll();
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+        return userRepository.getByFirstName(s);
     }
 }
