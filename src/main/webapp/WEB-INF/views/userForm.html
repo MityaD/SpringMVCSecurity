@@ -6,7 +6,7 @@
     <title>Title</title>
 </head>
 <body>
-<form method="post" action="/admin/save">
+<form method="post" action="/user/save">
     <input type="hidden" name="id" th:field="*{user.id}">
     <dl>
         <dt>First Name:</dt>
@@ -36,10 +36,10 @@
         <dt>House:</dt>
         <dd><input type="text" th:field="*{user.address.house}" size=40 name="house" required></dd>
     </dl>
-    <dl>
-        <dt>Role:</dt>
-        <dd><input type="text" th:field="*{user.roles}" size=40 name="role" required></dd>
-    </dl>
+<!--    <dl>-->
+<!--        <dt>Role:</dt>-->
+<!--        <dd><input type="text" th:field="*{user.roles}" size=40 name="role" required></dd>-->
+<!--    </dl>-->
     <button type="submit">Save</button>
 </form>
 </body>
