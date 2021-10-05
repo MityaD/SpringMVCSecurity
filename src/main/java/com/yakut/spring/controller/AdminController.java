@@ -2,14 +2,14 @@ package com.yakut.spring.controller;
 
 import com.yakut.spring.model.User;
 import com.yakut.spring.service.UserService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@AllArgsConstructor//todo не та аннатация
+@RequiredArgsConstructor
 @RequestMapping("/admin")
 public class AdminController {
 
