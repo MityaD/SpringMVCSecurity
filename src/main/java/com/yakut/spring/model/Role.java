@@ -48,7 +48,7 @@ public class Role implements GrantedAuthority {
     }
 
     @Override
-    public String toString() {
+    public String toString() {//todo це шо за г? не понимать
         return role;
     }
 }
