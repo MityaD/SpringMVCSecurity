@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@AllArgsConstructor
+@AllArgsConstructor//todo не та аннатация
 @RequestMapping("/admin")
 public class AdminController {
 
