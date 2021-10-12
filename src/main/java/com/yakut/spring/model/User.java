@@ -1,7 +1,6 @@
 package com.yakut.spring.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,7 +18,6 @@ import java.util.Set;
 @AllArgsConstructor
 @Table(name = "users")
 public class User implements UserDetails {
-
     @Id
     @GeneratedValue (strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
@@ -32,11 +30,9 @@ public class User implements UserDetails {
     private int age;
     @Column(name = "password")
     private String password;
-
     @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn (name = "id_address")
     private Address address;
-
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "user_roles", joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id"))
